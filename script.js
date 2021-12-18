@@ -262,7 +262,6 @@ class grid {
             if (this.ifResetClicked == true) {
                 if (this.newGameClicked == true) {
 
-                    alert('yeah once')
                 }
             }
         }, { once: true })
@@ -653,7 +652,6 @@ class grid {
                         this.childCompArr.splice(this.childCompArr.indexOf(this.childCompArr[this.random2]), 1);
                         this.chosenBoxArr.splice(this.chosenBoxArr.length - 2, 1);
                         this.chosenBoxArr.splice(this.chosenBoxArr.length - 1, 1);
-                        alert(this.selectedStuff.length)
                         this.childBox.forEach(item => {
                             item.style.pointerEvents = "none";
                         })
@@ -753,7 +751,6 @@ class grid {
                 })
             }
         } else if (this.thisArr[2] === 1) {
-            alert(this.selectedStuff.length)
 
             if (this.selectedStuff.length == 36) {
                 this.makeDecideBox();
