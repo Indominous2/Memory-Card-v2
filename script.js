@@ -247,7 +247,7 @@ class grid {
             //     this.checkRestart();
             // }
 
-        }, this.once)
+        }, { once: true })
     }
 
     // this.grid.remove();
@@ -779,7 +779,9 @@ class grid {
 
         container.style.display = "block";
         this.grid.style.display = "none";
+
         this.grid.remove();
+        new grid().gameLoop();
         return this.resetFunctionality();
     }
 
@@ -823,10 +825,26 @@ class grid {
         this.playerContentBoxesArr = [];
         this.chosenBoxArr = [];
         this.selectedStuff = [];
-
         for (let i = 0; i < 3; i++) {
             btnClassSwitch(btnNameArr[i], buttonClassArr[i]);
         }
+        // let shuffled;
+
+        // if (this.thisArr[0] === 0) {
+
+        //     if (this.thisArr[2] === 0) {
+        //         shuffled = shuffle(this.shuffledNumArray);
+        //     } else {
+        //         shuffled = shuffle(this.shuffledNumArray6);
+        //     }
+
+        // } else {
+        //     if (this.thisArr[2] === 1) {
+        //         shuffled = shuffle(this.shuffledArr);
+        //     } else {
+        //         shuffled = shuffle(this.shuffledArr6);
+        //     }
+        // }
 
     }
 

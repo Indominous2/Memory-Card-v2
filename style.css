@@ -439,6 +439,9 @@ p {
 
 .heading {
     min-width: 4rem;
+    min-height: 100%;
+    position: relative;
+    bottom: 14px;
     color: #273139;
     height: 1.5rem;
     font-size: 3rem;
@@ -506,6 +509,9 @@ p {
         top: -10%;
         left: 38.9%;
     }
+    .headerBox {
+        min-width: 90%;
+    }
 }
 
 @media screen and (min-width: 601px) and (max-width: 800px) {
@@ -521,6 +527,9 @@ p {
     .playerDiv {
         width: 23%;
     }
+    .headerBox {
+        min-width: 82%;
+    }
 }
 
 @media screen and (min-width: 800px) and (max-width: 950px) {
@@ -530,6 +539,9 @@ p {
     .gridCont {
         width: 58vw;
     }
+    .headerBox {
+        min-width: 75%;
+    }
 }
 
 @media screen and (min-width: 951px) and (max-width: 1200px) and (min-height: 500px) {
@@ -538,6 +550,9 @@ p {
     }
     .gridCont {
         width: 40%;
+    }
+    .headerBox {
+        min-width: 68.5%;
     }
 }
 
