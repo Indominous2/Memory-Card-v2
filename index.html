@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- header -->
+    <div class="inline-head">
+        <p class="heading">memory</p>
+        <!-- <button class="hoverBtn restart">Restart</button> -->
+        <button class="hoverBtn newGame">New Game</button>
+    </div>
+
+    <!-- main container -->
+    <div class="container">
+        <div class="theme">
+            <p class="themePara">Select Theme</p>
+            <div class="btns1">
+                <button class="btn themeBtn">Numbers</button>
+                <button class="btn themeBtn">Icons</button>
+            </div>
+        </div>
+        <div class="playerSelection">
+            <p class="playerSelectionPara">Number of Players</p>
+            <div class="btns2">
+                <button class="btn1 selectionBtn">1</button>
+                <button class="btn1 selectionBtn">2</button>
+                <button class="btn1 selectionBtn">3</button>
+                <button class="btn1 selectionBtn">4</button>
+            </div>
+        </div>
+        <div class="gridSize">
+            <p class="girdSizePara">Grid Size</p>
+            <div class="btns3">
+                <button class="btn2 gridBtn">4x4</button>
+                <button class="btn2 gridBtn">6x6</button>
+            </div>
+        </div>
+        <div class="playBtnCont">
+            <button class="playBtn">Start Game</button>
+        </div>
+    </div>
+    <div class="playerCont">
+
+    </div>
+
+
+
+    <!-- Javascript Part -->
+    <script src="./script.js"></script>
+</body>
+
+</html>
+
+<!-- parts() {
+        this.headCont = document.createElement("div");
+        this.headCont.classList.add("inline-head");
+        document.body.appendChild(this.headCont);
+        this.p = document.createElement("p");
+        this.restartBtn1 = document.createElement("button");
+        this.newGameBtn1 = document.createElement("button");
+        this.p.classList.add("heading");
+        this.p.textContent = "memory";
+        this.restartBtn1.classList.add("hoverBtn");
+        this.restartBtn1.classList.add("restart");
+        this.restartBtn1.textContent = "Restart";
+        this.newGameBtn1.classList.add("hoverBtn");
+        this.newGameBtn1.classList.add("newGame");
+        this.newGameBtn1.textContent = "New Game";
+        this.headCont.classList.add("headerBox");
+        this.headCont.appendChild(this.p);
+        this.headCont.appendChild(this.restartBtn1);
+        this.headCont.appendChild(this.newGameBtn1);
+    } -->
+<!-- var shuffledArr;
+        if (this.thisArr[0] === 0) {
+            if (this.thisArr[2] === 0) {
+                shuffledArr = this.shuffle(this.shuffledNumArray)
+            } else {
+                shuffledArr = this.shuffle(this.shuffledNumArray6)
+            }
+        } else {
+            if (this.thisArr[2] === 0) {
+                shuffledArr = this.shuffle(this.shuffledArr);
+            } else {
+                shuffledArr = this.shuffle(this.shuffledArr6);
+            }
+        }
+        for (let i = 0; i < shuffledArr.length; i++) {
+            this.boxesArr[i].style.backgroundImage = `url(${shuffledArr[i]})` -->
