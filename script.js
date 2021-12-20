@@ -154,7 +154,7 @@ class grid {
         this.cardFlipBack = new Audio("./sounds/card-back-over.mp3");
         this.gameFinishedCount = 0;
         this.scoreDivArr = [];
-        // this.restartBtn1 = document.querySelector(".restart");
+        this.restartBtn1 = document.querySelector(".restart");
         this.newGameBtn1 = document.querySelector(".newGame");
         this.headCont = document.querySelector(".inline-head");
         this.ifPlay = false;
@@ -222,8 +222,8 @@ class grid {
                 document.body.appendChild(this.headCont)
                 document.body.appendChild(this.newGameBtn1)
                 this.headCont.classList.add('headerBox');
-                // document.body.appendChild(this.restartBtn1)
-                // this.headCont.appendChild(this.restartBtn1)
+                document.body.appendChild(this.restartBtn1)
+                this.headCont.appendChild(this.restartBtn1)
                 this.headCont.appendChild(this.newGameBtn1)
                 themeMusic.play();
                 themeMusic.currentTime = 0;
@@ -270,17 +270,15 @@ class grid {
 
         this.newGameBtn1.addEventListener("click", () => {
             this.newGame();
-            this.headCont.remove()
-            this.newGameBtn1.remove();
-            this.newGameClicked = true;
-
+            // this.headCont.remove()
+            // this.newGameBtn1.remove();
+            // this.newGameClicked = true;
         }, { once: true })
 
-        // this.restartBtn1.addEventListener("click", () => {
-        //     // alert("clicked resetBtn")
-        //     this.ifResetClicked = true;
-        //     this.restart();
-        // }, { once: true })
+        this.restartBtn1.addEventListener("click", () => {
+            this.ifResetClicked = true;
+            this.restart();
+        }, { once: true })
     }
     animate() {
         this.body.classList.add("animate")
@@ -567,10 +565,6 @@ class grid {
                     }
 
                 }
-
-
-
-
             }, 300)
 
         }, time);
@@ -742,13 +736,13 @@ class grid {
                     this.decideContainer.style.display = "none";
                     // this.restartBtn1.style.pointerEvents = "auto";
                     this.newGameBtn1.style.pointerEvents = "auto";
-                })
+                }, { once: true })
                 this.restartBtn.addEventListener("click", () => {
                     this.restart(this.decideContainer);
                     this.decideContainer.style.display = "none";
                     // this.restartBtn1.style.pointerEvents = "auto";
                     this.newGameBtn1.style.pointerEvents = "auto";
-                })
+                }, { once: true })
             }
         } else if (this.thisArr[2] === 1) {
 
@@ -760,13 +754,13 @@ class grid {
                     this.headCont.classList.remove("headerBox");
                     // this.restartBtn1.style.pointerEvents = "auto";
                     this.newGameBtn1.style.pointerEvents = "auto";
-                })
+                }, { once: true })
                 this.restartBtn.addEventListener("click", () => {
                     this.restart()
                     this.decideContainer.style.display = "none";
                     // this.restartBtn1.style.pointerEvents = "auto";
                     this.newGameBtn1.style.pointerEvents = "auto";
-                })
+                }, { once: true })
             }
         }
 
@@ -774,15 +768,16 @@ class grid {
 
 
     newGame() {
+        window.location.reload(true);
 
-        document.body.style.background = "#162938";
+        // document.body.style.background = "#162938";
 
-        container.style.display = "block";
-        this.grid.style.display = "none";
+        // container.style.display = "block";
+        // this.grid.style.display = "none";
 
-        this.grid.remove();
-        new grid().gameLoop();
-        return this.resetFunctionality();
+        // this.grid.remove();
+        // new grid().gameLoop();
+        // return this.resetFunctionality();
     }
 
     restart() {
