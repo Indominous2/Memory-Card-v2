@@ -257,15 +257,7 @@ class grid {
     })  
     
     */
-    checkRestart() {
-        this.restartBtn1.addEventListener("click", () => {
-            if (this.ifResetClicked == true) {
-                if (this.newGameClicked == true) {
 
-                }
-            }
-        }, { once: true })
-    }
     headContainer() {
 
         this.newGameBtn1.addEventListener("click", () => {
@@ -276,8 +268,9 @@ class grid {
         }, { once: true })
 
         this.restartBtn1.addEventListener("click", () => {
-            this.ifResetClicked = true;
-            this.restart();
+            if (this.ifResetClicked == false) {
+                this.restart();
+            }
         }, { once: true })
     }
     animate() {
@@ -598,11 +591,13 @@ class grid {
 
                 for (let i = 0; i < 2; i++) {
                     this.boxesArr[this.childBox.indexOf(this.chosenBoxArr[this.chosenBoxArr.length - (i + 1)])].style.fontSize = "2.5rem";
+                    this.boxesArr[this.childBox.indexOf(this.chosenBoxArr[this.chosenBoxArr.length - (i + 1)])].style.backgroundColor = "#BCCEDC";
                     this.boxesArr[this.childBox.indexOf(this.chosenBoxArr[this.chosenBoxArr.length - (i + 1)])].classList.add("flex");
                     this.boxesArr[this.childBox.indexOf(this.chosenBoxArr[this.chosenBoxArr.length - (i + 1)])].lastChild.style.opacity = "0";
                     this.boxesArr[this.childBox.indexOf(this.chosenBoxArr[this.chosenBoxArr.length - (i + 1)])].lastChild.style.display = "none";
                     this.childBox[this.childBox.indexOf(this.chosenBoxArr[this.chosenBoxArr.length - (i + 1)])].classList.remove("moveNegative");
                     this.childBox[this.childBox.indexOf(this.chosenBoxArr[this.chosenBoxArr.length - (i + 1)])].classList.add("move");
+
                     this.cardFlip.play();
                 }
 
@@ -691,7 +686,7 @@ class grid {
     compHelp() {
         setTimeout(() => {
             for (let i = 0; i < 2; i++) {
-                this.childBox[this.childBox.indexOf(this.chosenBoxArr[this.chosenBoxArr.length - (i + 1)])].classList.add("moveNegative");
+                this.childBox[this.childBox.indexOf(this.chosenBoxArr[this.chosenBoxArr.length - (i + 1)])].classList.remove("moveNegative");
                 this.cardFlipBack.play()
                 this.childBox[this.childBox.indexOf(this.chosenBoxArr[this.chosenBoxArr.length - (i + 1)])].classList.remove("move");
             }
@@ -738,6 +733,8 @@ class grid {
                     this.newGameBtn1.style.pointerEvents = "auto";
                 }, { once: true })
                 this.restartBtn.addEventListener("click", () => {
+                    this.ifResetClicked = true;
+
                     this.restart(this.decideContainer);
                     this.decideContainer.style.display = "none";
                     // this.restartBtn1.style.pointerEvents = "auto";
@@ -756,6 +753,8 @@ class grid {
                     this.newGameBtn1.style.pointerEvents = "auto";
                 }, { once: true })
                 this.restartBtn.addEventListener("click", () => {
+                    this.ifResetClicked = true;
+
                     this.restart()
                     this.decideContainer.style.display = "none";
                     // this.restartBtn1.style.pointerEvents = "auto";
